@@ -1,6 +1,6 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const mongodb = require('mongodb');
+const mongoose = require('./config/connection');
 
 
 const app = express()
