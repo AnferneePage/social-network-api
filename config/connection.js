@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Connection URL
-const url = 'mongodb://localhost/social-network'; // Replace with your MongoDB connection URL
+const url = 'mongodb://localhost/social-network';
 
 // Connect to the database
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
