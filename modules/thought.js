@@ -20,7 +20,7 @@ const thoughtSchema = new Schema({
     },
     reactions: [reactionSchema]
 });
-
+// Below is the reactionCount virtual field
 thoughtSchema.virtual('reactionCount').get(function () {
     return this.reactions.length;
 });

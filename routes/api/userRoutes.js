@@ -4,16 +4,19 @@ const User = require('../../modules/user')
 
 router.get('/', async (req, res) => {
     // return all users
-    try{
-        const users = await User.find()
+    try {
+        const users = await User.find();
+        res.json(users);
     } catch (err) {
-        res.status(500).json({ error:err.message});
+        res.status(500).json({ error: err.message });
     }
 });
 
-router.get('/:id', async (req, res) => {
+module.exports = router;
+
+router.get('/:userId', async (req, res) => {
     try {
-        const user = await User.findById(req.params.id)
+        const user = await User.findById(req.params.userId)
             .populate('thoughts')
             .populate('friends');
         if (!user) {
@@ -85,10 +88,6 @@ router.delete('/:userId/friends/:friendId', async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
-
-// Other route definitions
-
-module.exports = router;
 
 
 module.exports = router;
